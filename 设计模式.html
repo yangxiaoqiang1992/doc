@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+    <script >hljs.initHighlightingOnLoad();</script>  
+    <title>js设计模式</title>
+    <style>
+        *{
+            margin:0;
+            color:#333;
+        }
+        h1,h2,h3,h4,h5{
+            padding:10px 5px;
+        }
+        section{
+            padding:10px;
+            background:#f4f4f4;
+            border-radius:5px;
+            margin-bottom:20px;
+        }
+        p{
+            font-size:14px;
+            line-height:1.5;
+        }
+        code{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:13px;
+            line-height:19px;
+        }
+    </style>
+</head>
+<body>
+<h1>js设计模式</h1>
+<section>
+    <h2>1、桥接模式</h2>
+    <p>将抽象与其实现隔离开来，一般适用于事件驱动,监听器回调函数</p>
+    <pre>
+        <code class="lang-javascript">
+            function a(){
+
+            }
+        </code>
+    </pre>
+    <p>用于连接公用api和私有代码</p>
+    <pre>
+        <code class="lang-javascript">
+            /**
+            *  访问私有属性
+            */
+            var Public=function(){
+                var secret='123';
+                this.getSecret=function(){
+                    return secret
+                }
+            }
+            var p =new Public();
+            p.getSecret()   //123
+        </code>
+    </pre>
+    <pre>
+        <code class="lang-javascript">
+            /**
+            *  连接多个类
+            */
+            function Aclass(a){
+                this.a = a
+            }
+            function Bclass(b){
+                this.b = b
+            }
+            function Cclass{
+                this.a =new Aclass('a');
+                this.b =new Bclass('b');
+            }
+            console.log(new Cclass('a','b'))
+        </code>
+    </pre>
+</section>
+<script>
+
+</script>   
+</body>
+</html>
