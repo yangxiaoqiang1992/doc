@@ -13,6 +13,9 @@
             margin:0;
             color:#333;
         }
+        div,p{
+            font-size:14px;
+        }
         h1,h2,h3,h4,h5{
             padding:10px 5px;
         }
@@ -40,8 +43,16 @@
     <p>将抽象与其实现隔离开来，一般适用于事件驱动,监听器回调函数</p>
     <pre>
         <code class="lang-javascript">
-            function a(){
-
+            function getResultById(id,callback){
+               asyncRequst('GET',url){
+                 callback()
+               }
+            }
+            addEvent(element,'click',getResultBridge)
+            function getResultBridge(e){
+                getResultById(id,function(){
+                    //
+                })
             }
         </code>
     </pre>
@@ -79,6 +90,16 @@
             console.log(new Cclass('a','b'))
         </code>
     </pre>
+    <h2>2、组合模式</h2>
+    <p>用一条命令在多个对象上计发复杂的或递归的行为,适用于对大批对象操作</p>
+    <div>优点：
+        <ul>
+            <li>1:用同样的方法处理对象的集合与其中特定子对象</li>
+            <li>2:把一批子对象组织成树形结构，并可遍历</li>
+        </ul>
+        组合对象:叶对象（不包含其他页对象）和组合对象（叶对象+组合对象）
+    </div>
+    <section></section>
 </section>
 <script>
 
